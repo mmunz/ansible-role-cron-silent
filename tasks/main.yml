@@ -1,0 +1,17 @@
+---
+# tasks file for c1.10-cron-silent
+- name: Create /etc/pam.d/10-cron-silent from template
+  template:
+    src: "10-cron-silent.j2"
+    dest: "/etc/pam.d/10-cron-silent"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart crond
+  when: cron_silent_pam_enabled
+  tags: [cron]
+- name: Remove /etc/pam.d/10-cron-silent if disabled
+  file: name=/etc/pam.d/10-cron-silent state=absent
+  notify: restart crond
+  when: not cron_silent_pam_enabled
+  tags: [cron]

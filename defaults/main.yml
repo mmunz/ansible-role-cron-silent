@@ -1,0 +1,4 @@
+---
+# defaults file for c1.cron-silent
+cron_silent_pam_enabled: yes
+

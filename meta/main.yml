@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Manuel Munz
+  description: Make cron log a little bit less unneeded information
+  company: comuno.net
+  license: BSD
+  min_ansible_version: 2.2
+
+  platforms:
+  - name: Debian
+    versions:
+    - etch
+    - jessie
+    - lenny
+    - squeeze
+    - wheezy
+  
+  galaxy_tags:
+    - cron
+    - pam
+    - syslog
